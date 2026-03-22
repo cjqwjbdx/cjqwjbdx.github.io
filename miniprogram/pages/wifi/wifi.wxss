@@ -1,0 +1,84 @@
+/* pages/wifi/wifi.wxss */
+.card-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.card-title text:first-child {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333333;
+}
+
+.card-title .icon {
+  font-size: 40rpx;
+}
+
+.form-item {
+  position: relative;
+  margin-bottom: 30rpx;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 24rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 32rpx;
+  padding: 10rpx;
+}
+
+.scan-button {
+  margin: 30rpx 0;
+}
+
+.wifi-list {
+  max-height: 500rpx;
+  overflow-y: auto;
+  margin-top: 20rpx;
+}
+
+.wifi-item {
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  margin-bottom: 16rpx;
+  background: #F8F9FA;
+  border-radius: 12rpx;
+  transition: all 0.3s;
+}
+
+.wifi-item.selected {
+  background: linear-gradient(135deg, rgba(74, 144, 226, 0.1) 0%, rgba(74, 144, 226, 0.05) 100%);
+  border: 2rpx solid #4A90E2;
+}
+
+.wifi-icon {
+  font-size: 36rpx;
+  margin-right: 16rpx;
+}
+
+.wifi-detail {
+  flex: 1;
+}
+
+.wifi-name {
+  display: block;
+  font-size: 28rpx;
+  font-weight: 500;
+  color: #333333;
+  margin-bottom: 4rpx;
+}
+
+.wifi-signal {
+  font-size: 24rpx;
+  color: #999999;
+}
+
+.check-icon {
+  font-size: 36rpx;
+  color: #52C41A;
+  font-weight: bold;
+}

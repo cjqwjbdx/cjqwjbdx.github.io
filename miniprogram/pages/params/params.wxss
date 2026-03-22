@@ -1,0 +1,45 @@
+/* pages/params/params.wxss */
+.switch-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10rpx 0;
+}
+
+.switch-label {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.picker {
+  width: 100%;
+  height: 80rpx;
+  background: #F5F7FA;
+  border-radius: 12rpx;
+  padding: 0 24rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #333333;
+  box-sizing: border-box;
+  border: 2rpx solid transparent;
+  transition: all 0.3s;
+}
+
+.picker-arrow {
+  color: #999999;
+  font-size: 24rpx;
+}
+
+.button-group {
+  margin-top: 40rpx;
+}
+
+.button-group button {
+  margin-bottom: 20rpx;
+}
+
+.button-group button:last-child {
+  margin-bottom: 0;
+}

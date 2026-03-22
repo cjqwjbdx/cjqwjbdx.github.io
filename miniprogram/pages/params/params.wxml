@@ -1,0 +1,179 @@
+<!--pages/params/params.wxml-->
+<view class="container">
+  <!-- 连接状态 -->
+  <view class="card">
+    <view class="status-header">
+      <text class="status-dot {{connected ? 'connected' : 'disconnected'}}"></text>
+      <text class="status-text">{{connected ? '设备已连接' : '设备未连接'}}</text>
+    </view>
+  </view>
+
+  <!-- 天气配置 -->
+  <view class="card">
+    <view class="card-title">
+      <text>天气配置</text>
+      <text class="icon">🌤️</text>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">天气来源</text>
+      <picker 
+        mode="selector" 
+        range="{{weatherTypes}}" 
+        value="{{weatherTypeIndex}}" 
+        bindchange="onWeatherTypeChange"
+        disabled="{{!connected}}"
+      >
+        <view class="picker">
+          {{weatherTypes[weatherTypeIndex]}}
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">默认城市</text>
+      <input
+        class="form-input"
+        placeholder="请输入城市名称"
+        value="{{city}}"
+        bindinput="onCityInput"
+        disabled="{{!connected}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">API密钥</text>
+      <input
+        class="form-input"
+        placeholder="选填，如：cunganul****anul"
+        value="{{apiKey}}"
+        bindinput="onApiKeyInput"
+        disabled="{{!connected}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">周信息显示</text>
+      <picker 
+        mode="selector" 
+        range="{{weekInfoOptions}}" 
+        value="{{weekInfoIndex}}" 
+        bindchange="onWeekInfoChange"
+        disabled="{{!connected}}"
+      >
+        <view class="picker">
+          {{weekInfoOptions[weekInfoIndex]}}
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="switch-item">
+      <text class="switch-label">显示金价</text>
+      <switch 
+        checked="{{showGold}}" 
+        bindchange="onGoldChange"
+        disabled="{{!connected}}"
+      />
+    </view>
+  </view>
+
+  <!-- 标签配置 -->
+  <view class="card">
+    <view class="card-title">
+      <text>标签配置</text>
+      <text class="icon">🏷️</text>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">标签天数</text>
+      <input 
+        class="form-input" 
+        type="number" 
+        placeholder="如：7" 
+        value="{{tagDays}}"
+        bindinput="onTagDaysInput"
+        disabled="{{!connected}}"
+      />
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">冲刺日期</text>
+      <picker 
+        mode="date" 
+        value="{{examDate}}" 
+        bindchange="onExamDateChange"
+        disabled="{{!connected}}"
+      >
+        <view class="picker">
+          {{examDate || '请选择日期'}}
+          <text class="picker-arrow">📅</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">日期标签</text>
+      <input 
+        class="form-input" 
+        placeholder="如：生日" 
+        value="{{dayLabel}}"
+        bindinput="onDayLabelInput"
+        disabled="{{!connected}}"
+      />
+    </view>
+  </view>
+
+  <!-- 日程配置 -->
+  <view class="card">
+    <view class="card-title">
+      <text>日程配置</text>
+      <text class="icon">📅</text>
+    </view>
+
+    <view class="form-item">
+      <text class="form-label">学习日程</text>
+      <picker 
+        mode="selector" 
+        range="{{scheduleOptions}}" 
+        value="{{scheduleIndex}}" 
+        bindchange="onScheduleChange"
+        disabled="{{!connected}}"
+      >
+        <view class="picker">
+          {{scheduleOptions[scheduleIndex]}}
+          <text class="picker-arrow">▼</text>
+        </view>
+      </picker>
+    </view>
+
+    <view class="switch-item">
+      <text class="switch-label">日程提醒</text>
+      <switch 
+        checked="{{scheduleReminder}}" 
+        bindchange="onReminderChange"
+        disabled="{{!connected}}"
+      />
+    </view>
+  </view>
+
+  <!-- 保存按钮 -->
+  <view class="button-group">
+    <button 
+      class="btn-primary" 
+      bindtap="saveConfig"
+      disabled="{{!connected || saving}}"
+      loading="{{saving}}"
+    >
+      {{saving ? '保存中...' : '保存配置'}}
+    </button>
+    <button 
+      class="btn-secondary" 
+      bindtap="resetConfig"
+      disabled="{{!connected || resetting}}"
+    >
+      {{resetting ? '重置中...' : '恢复默认'}}
+    </button>
+  </view>
+</view>
