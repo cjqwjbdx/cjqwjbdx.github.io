@@ -1,2 +1,0 @@
-// 黄金价格缓存
-#define PREF_WIDGETS_GOLD_PRICE "WIDGETS_GOLD_PRICE"
