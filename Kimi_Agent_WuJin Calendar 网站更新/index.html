@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WuJin Calendar - 墨水屏日历</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --apple-dark: #1d1d1f;
+      --apple-gray: #86868b;
+      --apple-blue: #0071e3;
+      --apple-blue-hover: #0077ed;
+      --apple-light: #f5f5f7;
+      --glass-bg: rgba(255, 255, 255, 0.8);
+      --glass-border: rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(20px);
+      border-radius: 30px;
+      padding: 60px 80px;
+      max-width: 800px;
+      text-align: center;
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .logo {
+      font-size: 48px;
+      font-weight: 700;
+      color: var(--apple-dark);
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
+
+    .logo span {
+      color: var(--apple-blue);
+    }
+
+    .subtitle {
+      font-size: 24px;
+      color: var(--apple-gray);
+      margin-bottom: 40px;
+      font-weight: 500;
+    }
+
+    .description {
+      font-size: 18px;
+      color: var(--apple-dark);
+      line-height: 1.8;
+      margin-bottom: 50px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 50px;
+    }
+
+    .feature-item {
+      text-align: center;
+      padding: 20px;
+      background: var(--apple-light);
+      border-radius: 15px;
+      transition: transform 0.3s ease;
+    }
+
+    .feature-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 40px;
+      margin-bottom: 15px;
+    }
+
+    .feature-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--apple-dark);
+      margin-bottom: 8px;
+    }
+
+    .feature-desc {
+      font-size: 14px;
+      color: var(--apple-gray);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 50px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--apple-blue);
+      color: white;
+      box-shadow: 0 10px 30px rgba(0, 113, 227, 0.4);
+    }
+
+    .btn-primary:hover {
+      background: var(--apple-blue-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(0, 113, 227, 0.5);
+    }
+
+    .footer {
+      margin-top: 40px;
+      padding-top: 30px;
+      border-top: 1px solid var(--glass-border);
+      color: var(--apple-gray);
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 40px 30px;
+      }
+
+      .logo {
+        font-size: 36px;
+      }
+
+      .subtitle {
+        font-size: 20px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 16px 30px;
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">WuJin<span>Calendar</span></div>
+    <div class="subtitle">智能墨水屏日历，让时间管理更优雅</div>
+    
+    <p class="description">
+      WuJin Calendar 是一款基于墨水屏技术的智能日历设备，结合了传统日历的简约与现代科技的创新。低功耗、护眼、长续航，为您带来全新的时间管理体验。
+    </p>
+
+    <div class="features">
+      <div class="feature-item">
+        <div class="feature-icon">📱</div>
+        <div class="feature-title">墨水屏显示</div>
+        <div class="feature-desc">护眼节能，清晰可见</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">⚡</div>
+        <div class="feature-title">超长续航</div>
+        <div class="feature-desc">一次充电，数月使用</div>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon">🎨</div>
+        <div class="feature-title">多种配色</div>
+        <div class="feature-desc">时尚外观，个性选择</div>
+      </div>
+    </div>
+
+    <a href="introshop.html" class="btn btn-primary">
+      🛒 进入商城
+    </a>
+
+    <div class="footer">
+      © 2024 WuJin Studio. All rights reserved.
+    </div>
+  </div>
+</body>
+</html>
